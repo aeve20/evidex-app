@@ -2,65 +2,49 @@
 <html lang="he" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 <meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="EVIDEX">
+<meta name="mobile-web-app-capable" content="yes">
 <meta name="theme-color" content="#1a3a6b">
 <title>EVIDEX</title>
-<link rel="apple-touch-icon" href="icon.png">
+<link rel="apple-touch-icon" href="icon.jpg">
 <link rel="manifest" href="manifest.json">
 <style>
-body{
-  margin:0;padding:0;
-  background:#0a1628;
-  min-height:100vh;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  justify-content:center;
-  font-family:Arial,sans-serif;
-  color:#fff;
-  text-align:center;
-}
-img{
-  width:160px;
-  height:160px;
-  object-fit:contain;
-  margin-bottom:20px;
-}
-h1{
-  font-size:48px;
-  font-weight:700;
-  letter-spacing:5px;
-  color:#c8a840;
-  margin-bottom:8px;
-}
-p{
-  font-size:13px;
-  color:#8aaee0;
-  margin-bottom:6px;
-}
-a{
-  display:inline-block;
-  margin-top:30px;
-  background:#1a3a6b;
-  border:2px solid #c8a840;
-  border-radius:50px;
-  padding:14px 40px;
-  color:#fff;
-  font-size:15px;
-  font-weight:700;
-  text-decoration:none;
-}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{background:#0a1628;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;font-family:Arial,Helvetica,sans-serif;overflow:hidden;}
+.stars{position:fixed;inset:0;pointer-events:none;background:radial-gradient(ellipse at 20% 50%,rgba(26,58,107,.7) 0%,transparent 50%),radial-gradient(ellipse at 80% 20%,rgba(42,82,152,.5) 0%,transparent 40%),#0a1628;}
+.stars::before{content:'';position:absolute;inset:0;background-image:radial-gradient(1px 1px at 10% 15%,rgba(255,255,255,.7) 0%,transparent 100%),radial-gradient(1px 1px at 25% 35%,rgba(255,255,255,.5) 0%,transparent 100%),radial-gradient(1px 1px at 40% 10%,rgba(255,255,255,.6) 0%,transparent 100%),radial-gradient(1px 1px at 55% 45%,rgba(255,255,255,.4) 0%,transparent 100%),radial-gradient(1px 1px at 70% 20%,rgba(255,255,255,.7) 0%,transparent 100%),radial-gradient(1px 1px at 85% 60%,rgba(255,255,255,.5) 0%,transparent 100%),radial-gradient(2px 2px at 45% 75%,rgba(200,168,64,.4) 0%,transparent 100%);}
+.container{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:20px;text-align:center;}
+.logo{width:180px;height:180px;object-fit:contain;filter:drop-shadow(0 0 40px rgba(200,168,64,.5));animation:float 3s ease-in-out infinite;margin-bottom:20px;}
+@keyframes float{0%,100%{transform:translateY(0);}50%{transform:translateY(-10px);}}
+.title{font-size:52px;font-weight:700;letter-spacing:6px;background:linear-gradient(135deg,#fff 0%,#c8a840 50%,#fff 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:8px;}
+.sub{font-size:14px;color:#8aaee0;letter-spacing:2px;margin-bottom:4px;}
+.sub2{font-size:11px;color:#4a6a9a;margin-bottom:40px;}
+.btn{background:linear-gradient(135deg,#1a3a6b,#2a5298);border:2px solid #c8a840;border-radius:50px;padding:16px 48px;color:#fff;font-size:16px;font-weight:700;text-decoration:none;display:inline-block;box-shadow:0 4px 30px rgba(200,168,64,.3);transition:all .2s;letter-spacing:1px;}
+.btn:hover,.btn:active{transform:scale(1.05);box-shadow:0 6px 40px rgba(200,168,64,.5);}
+.footer{position:fixed;bottom:16px;font-size:10px;color:#2a4a8a;z-index:1;}
 </style>
 </head>
 <body>
-  <img src="icon.png" alt="EVIDEX">
-  <h1>EVIDEX</h1>
-  <p>זירה טכנולוגית – משטרת ישראל</p>
-  <p style="font-size:11px;color:#4a6a9a">מערכת ניהול ראיות דיגיטליות</p>
-  <a href="https://script.google.com/macros/s/AKfycbx98mlQmVQFPiJLBIem4xzInVA1W3SnY_Gzw3W0LvmmIxiLIyeqkz_nJ9t4u8rbvgYtRA/exec">
-    כניסה למערכת ←
-  </a>
+<div class="stars"></div>
+<div class="container">
+  <img class="logo" src="icon.jpg" alt="EVIDEX">
+  <div class="title">EVIDEX</div>
+  <div class="sub">זירה טכנולוגית – משטרת ישראל</div>
+  <div class="sub2">מערכת ניהול ראיות דיגיטליות</div>
+  <a class="btn" href="https://script.google.com/macros/s/AKfycbx98mlQmVQFPiJLBIem4xzInVA1W3SnY_Gzw3W0LvmmIxiLIyeqkz_nJ9t4u8rbvgYtRA/exec">כניסה למערכת ←</a>
+</div>
+<div class="footer">EVIDEX © זירה טכנולוגית תחנת זבולון</div>
+<script>
+window.addEventListener('load',function(){
+  if(window.navigator.standalone||window.matchMedia('(display-mode: standalone)').matches){
+    setTimeout(function(){
+      window.location.href='https://script.google.com/macros/s/AKfycbx98mlQmVQFPiJLBIem4xzInVA1W3SnY_Gzw3W0LvmmIxiLIyeqkz_nJ9t4u8rbvgYtRA/exec';
+    },1500);
+  }
+});
+</script>
 </body>
 </html>
